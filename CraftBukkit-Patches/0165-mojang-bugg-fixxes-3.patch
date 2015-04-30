@@ -1,4 +1,4 @@
-From c897a85a31f811aa039be20324b8072ac5192977 Mon Sep 17 00:00:00 2001
+From e1e5dc6b65a74a342b1c9a25ef8dab43ad1e358b Mon Sep 17 00:00:00 2001
 From: BuildTools <unconfigured@null.spigotmc.org>
 Date: Thu, 30 Apr 2015 11:47:48 +0200
 Subject: [PATCH] mojang-bugg-fixxes-3
@@ -6,7 +6,7 @@ Subject: [PATCH] mojang-bugg-fixxes-3
 
 diff --git a/src/main/java/net/minecraft/server/WerrisChannel.java b/src/main/java/net/minecraft/server/WerrisChannel.java
 new file mode 100644
-index 0000000..1f5f338
+index 0000000..80ca262
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/WerrisChannel.java
 @@ -0,0 +1,254 @@
