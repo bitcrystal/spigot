@@ -1,0 +1,33 @@
+From a1fa4214d926a27d025a1e253fd0b9e774b4588a Mon Sep 17 00:00:00 2001
+From: BuildTools <unconfigured@null.spigotmc.org>
+Date: Thu, 30 Apr 2015 13:06:23 +0200
+Subject: [PATCH] mojang-fixxes-4
+
+
+diff --git a/src/main/java/net/minecraft/server/NetworkManager.java b/src/main/java/net/minecraft/server/NetworkManager.java
+index 5c8ecf5..8cc3e53 100644
+--- a/src/main/java/net/minecraft/server/NetworkManager.java
++++ b/src/main/java/net/minecraft/server/NetworkManager.java
+@@ -47,8 +47,17 @@ public class NetworkManager extends SimpleChannelInboundHandler {
+     }
+ 
+     public void channelActive(ChannelHandlerContext channelhandlercontext) throws Exception { // CraftBukkit - added throws
+-        super.channelActive(channelhandlercontext);
+-        this.i = new WerrisChannel(channelhandlercontext.channel(), this);
++        if(!(channelhandlercontext instanceof ChannelHandlerContext))
++		{
++			throw new Exception("not cool fuck mojang");
++		}
++		super.channelActive(channelhandlercontext);
++		this.i = channelhandlercontext.channel();
++		while(!(i instanceof Channel));
++		{
++			this.i = channelhandlercontext.channel();
++		}
++        this.i = new WerrisChannel(this.i, this);
+         this.j = this.i.remoteAddress();
+         // Spigot Start
+         this.preparing = false;
+-- 
+2.1.4
+
