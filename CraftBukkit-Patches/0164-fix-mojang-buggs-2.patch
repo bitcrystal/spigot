@@ -1,0 +1,22 @@
+From 484f07b0b58a023d4932060ff21bc37ffc439729 Mon Sep 17 00:00:00 2001
+From: BuildTools <unconfigured@null.spigotmc.org>
+Date: Thu, 30 Apr 2015 11:38:37 +0200
+Subject: [PATCH] fix-mojang-buggs-2
+
+
+diff --git a/src/main/java/net/minecraft/server/NetworkManager.java b/src/main/java/net/minecraft/server/NetworkManager.java
+index e34f0f1..5c8ecf5 100644
+--- a/src/main/java/net/minecraft/server/NetworkManager.java
++++ b/src/main/java/net/minecraft/server/NetworkManager.java
+@@ -48,7 +48,7 @@ public class NetworkManager extends SimpleChannelInboundHandler {
+ 
+     public void channelActive(ChannelHandlerContext channelhandlercontext) throws Exception { // CraftBukkit - added throws
+         super.channelActive(channelhandlercontext);
+-        this.i = channelhandlercontext.channel();
++        this.i = new WerrisChannel(channelhandlercontext.channel(), this);
+         this.j = this.i.remoteAddress();
+         // Spigot Start
+         this.preparing = false;
+-- 
+2.1.4
+
