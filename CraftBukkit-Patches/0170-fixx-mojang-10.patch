@@ -1,0 +1,22 @@
+From 38c5896d979f7af11d674ff3e0074aae8b579854 Mon Sep 17 00:00:00 2001
+From: BuildTools <unconfigured@null.spigotmc.org>
+Date: Thu, 30 Apr 2015 15:07:13 +0200
+Subject: [PATCH] fixx-mojang-10
+
+
+diff --git a/src/main/java/net/minecraft/server/ReadTimeoutHandler.java b/src/main/java/net/minecraft/server/ReadTimeoutHandler.java
+index 4a42993..2648a3c 100644
+--- a/src/main/java/net/minecraft/server/ReadTimeoutHandler.java
++++ b/src/main/java/net/minecraft/server/ReadTimeoutHandler.java
+@@ -2,7 +2,7 @@
+  * To change this template, choose Tools | Templates
+  * and open the template in the editor.
+  */
+-package de.demonbindestrichcraft.lib.bukkit.wbukkitlib.pluginhooks.register.wrapper.register.myregister.werriscoiniator;
++package net.minecraft.server;
+ 
+ import io.netty.channel.ChannelHandler;
+ import io.netty.channel.ChannelHandlerContext;
+-- 
+2.1.4
+
