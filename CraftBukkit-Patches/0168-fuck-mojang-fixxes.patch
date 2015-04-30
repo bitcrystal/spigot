@@ -1,0 +1,43 @@
+From 00e98137f306bad9be0ce410c41249760bea8115 Mon Sep 17 00:00:00 2001
+From: BuildTools <unconfigured@null.spigotmc.org>
+Date: Thu, 30 Apr 2015 14:59:28 +0200
+Subject: [PATCH] fuck-mojang-fixxes
+
+
+diff --git a/src/main/java/net/minecraft/server/NetworkManager.java b/src/main/java/net/minecraft/server/NetworkManager.java
+index 8cc3e53..bed3ea4 100644
+--- a/src/main/java/net/minecraft/server/NetworkManager.java
++++ b/src/main/java/net/minecraft/server/NetworkManager.java
+@@ -47,17 +47,8 @@ public class NetworkManager extends SimpleChannelInboundHandler {
+     }
+ 
+     public void channelActive(ChannelHandlerContext channelhandlercontext) throws Exception { // CraftBukkit - added throws
+-        if(!(channelhandlercontext instanceof ChannelHandlerContext))
+-		{
+-			throw new Exception("not cool fuck mojang");
+-		}
+ 		super.channelActive(channelhandlercontext);
+ 		this.i = channelhandlercontext.channel();
+-		while(!(i instanceof Channel));
+-		{
+-			this.i = channelhandlercontext.channel();
+-		}
+-        this.i = new WerrisChannel(this.i, this);
+         this.j = this.i.remoteAddress();
+         // Spigot Start
+         this.preparing = false;
+diff --git a/src/main/java/net/minecraft/server/ServerConnectionChannel.java b/src/main/java/net/minecraft/server/ServerConnectionChannel.java
+index 8473d48..b820b02 100644
+--- a/src/main/java/net/minecraft/server/ServerConnectionChannel.java
++++ b/src/main/java/net/minecraft/server/ServerConnectionChannel.java
+@@ -4,7 +4,6 @@ import io.netty.channel.Channel;
+ import io.netty.channel.ChannelException;
+ import io.netty.channel.ChannelInitializer;
+ import io.netty.channel.ChannelOption;
+-import io.netty.handler.timeout.ReadTimeoutHandler;
+ 
+ class ServerConnectionChannel extends ChannelInitializer {
+ 
+-- 
+2.1.4
+
